@@ -4,11 +4,11 @@ import { Provider as ReduxProvider } from 'react-redux';
 import configureStore from './state/store';
 import App from './views/App';
 
-// const reduxStore = configureStore(window.REDUX_INITIAL_DATA);
+const reduxStore = configureStore()
 
 ReactDOM.render(
-  // <ReduxProvider>
+  <ReduxProvider store={reduxStore}>
     <App />,
-  // </ReduxProvider>,
+  </ReduxProvider>,
   document.getElementById('root')
 )
