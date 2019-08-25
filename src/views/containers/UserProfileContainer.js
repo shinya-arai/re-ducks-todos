@@ -5,23 +5,19 @@ import UserProfile from '../components/UserProfile'
 const mapStateToProps = state => {
   return {
     users: usersSelectors.getUsers(
-      state.usersState.usersInfo,
+      state.usersState.usersInfo.users,
       state.usersState.usersFilter
     ),
     currentUser: usersSelectors.getCurrentUser(
-      state.usersState.usersInfo
+      state.usersState.usersInfo.currentUser
     )
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    onClick: () => {
-      dispatch()
-    }
-  }
+const mapDispatchToProps = {
+  onUserClick: usersOperations.changeCurrentUser
 }
 
-const UserProfileContainer = connect(mapStateToProps)(UserProfile)
+const UserProfileContainer = connect(mapStateToProps, mapDispatchToProps)(UserProfile)
 
 export default UserProfileContainer

@@ -1,16 +1,16 @@
 import CONSTANTS from './constants'
 
-const getUsers = (usersInfo, filter) => {
+const getUsers = (users, filter) => {
   switch(filter) {
     case CONSTANTS.GET_ALL:
-      return usersInfo.users;
+      return users;
     default: 
       throw new Error("error")
   }
 }
 
-const getCurrentUser = usersInfo => {
-  return usersInfo.currentUser
+const getCurrentUser = currentUser => {
+  return currentUser
 }
 
 export default {

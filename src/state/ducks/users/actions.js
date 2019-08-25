@@ -1,7 +1,14 @@
 import types from './types'
 
-export const changeCurentUser = () => {
+export const changeCurrentUser = newCurrentUser => {
   return {
-    types: types.CHANGE_CURRENT_USER,
+    type: types.CHANGE_CURRENT_USER,
+    payload: {
+      newCurrentUser
+    }
   }
+}
+
+export default {
+  changeCurrentUser
 }
