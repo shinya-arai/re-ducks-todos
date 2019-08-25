@@ -18,7 +18,7 @@ const usersInfo = (state = initialState, action) => {
     case types.CHANGE_CURRENT_USER:
       return {
         ...state,
-        currentUser: action.payload.currentUser
+        currentUser: action.payload.newCurrentUser
       }
     default:
       return state
