@@ -1,7 +1,7 @@
 import React from 'react';
 
 import UserProfileContainer from './containers/UserProfileContainer';
-import TodoForm from './components/TodoForm';
+import TodoFormContainer from './containers/TodoFormContainer';
 import TodoList from './components/TodoList';
 
 const App = () => {
@@ -11,7 +11,7 @@ const App = () => {
         <UserProfileContainer />
       </div>
       <div style={{ height: '20%'  }}>
-        <TodoForm />
+        <TodoFormContainer />
       </div>
       <div style={{ height: '60%'  }}>
         <TodoList />
