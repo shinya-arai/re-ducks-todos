@@ -2,22 +2,21 @@ import React from 'react';
 
 class TodoList extends React.Component {
   showTodoList = () => {
-    const Todos = [
-      {content: 're-ducksを学ぶ', person: 'Taro'},
-      {content: 'typescriptを勉強する', person: 'Jiro'},
-      {content: 'react-nativeが得意', person: 'Saburo'},
-      {content: 'scala学びたい', person: 'Shiro'},
-      {content: 'AWS試験受かりたい', person: 'Goro'},
-    ]
+    const { posts } = this.props
 
-    return Todos.map((todo, i) => {
+    if(!posts) {
+      return null
+    }
+
+    return posts.map(post => {
       return (
         <div 
-          key={i}
+          key={post.id}
           style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around', height: '10rem' }}
         >
-          <div>{todo.content}</div>
-          <div>{todo.person}</div>
+          <div>{post.text}</div>
+          <div>{post.contributer.name}</div>
+          <div>{post.contributer.count}</div>
         </div>
       )
     })
