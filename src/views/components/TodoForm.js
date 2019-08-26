@@ -6,10 +6,10 @@ class Todoform extends React.Component  {
   onPostClick = e => {
     e.preventDefault()
 
-    const { onPostClick } = this.props
+    const { onPostClick, currentUser } = this.props
     const { text } = this.state
 
-    onPostClick(text)
+    onPostClick(text, currentUser)
     this.setState({ text: '' })
   }
 
